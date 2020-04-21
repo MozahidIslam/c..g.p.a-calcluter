@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+ 
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center"> C.G.P.A Calculation Calculator</h1>
+  <div class="row">
+    <div class="col-sm-6">
+     <div class="pencil">
+        <h2>Calculaion Your C.G.P.A</h2>
+      <ul>
+        <li><h4>80% or above   [A+]   (4.00)</h4></li>
+        <li><h4>75% to less than 80% A (3.75)</h4> </li>
+        <li><h4>70% to less than 75% A- (3.50)</h4></li>
+        <li><h4>65% to less than 70% B+ (3.25)</h4></li>
+        <li><h4>60% to less than 65% B (3.00)</h4> </li>
+        <li><h4>55% to less than 60% B- (2.75)</h4> </li>
+        <li><h4>50% to less than 55% C+ (2.50) </h4></li>
+        <li><h4>45% to less than 50% C (2.25) </h4></li>
+        <li><h4>40% to less than 45% D (2.00) </h4></li>
+        <li><h4>40%(less than 40%) F ( 0.00)</h4></li>
+
+      </ul>
+     </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="orange">
+        <div class="apple">
+          <form">
+            <div class="form-group lol">
+              <input type="text" class="form-control pen"  id="user1" name="username"  placeholder="Audit">
+            </div><!--end-->
+            <div class="form-group lol">
+              <input type="text" class="form-control pen" id="user2" name="username"  placeholder="Advance Accounting">
+            </div><!--end-->
+            <div class="form-group lol">
+              <input type="text" class="form-control pen" id="user3" name="username"  placeholder="Cost Accounting">
+            </div><!--end-->
+            <div class="form-group">
+              <input type="text" class="form-control pen" id="user4" name="username"  placeholder="Management Accounting">
+            </div><!--end-->
+            <div class="form-group">
+              <input type="text" class="form-control pen" id="user5" name="username"  placeholder="Financial Management">
+            </div><!--end-->
+            <div class="form-group">
+              <input type="text" class="form-control pen" id="user6" name="username"  placeholder="Business and commercial laws">
+            </div><!--end-->
+            <div class="form-group">
+              <input type="text" class="form-control pen " id="user7" name="username"  placeholder="Entrepreneurship">
+            </div><!--end-->
+            <div class="form-group">
+              <input type="text" class="form-control pen" id="user8" name="username"  placeholder="Banking and Insurance">
+            </div><!--end-->
+          
+            <button onclick="myFunction()" type="submit" class="btn btn-primary mb-4">Submit</button>
+          </form>
+        </div>
+        <div class="form-group win">
+          <h4 id="values"></h4>
+        </div><!--end-->
+</div>
+    </div>
+  </div>
+</div>
+<script>
+const myFunction = () => {
+  let user1 = document.getElementById("user1").value;
+  let user2 = document.getElementById("user2").value;
+  let user3 = document.getElementById("user3").value;
+  let user4 = document.getElementById("user4").value;
+  let user5 = document.getElementById("user5").value;
+  let user6 = document.getElementById("user6").value;
+  let user7 = document.getElementById("user7").value;
+  let user8 = document.getElementById("user8").value;
+  
+
+  let totalGread = parseFloat(user1) + parseFloat(user2) + parseFloat(user3) + parseFloat(user4) + parseFloat(user5) + parseFloat(user6) + parseFloat(user7) + parseFloat(user8);
+  let per = (totalGread/800) * 100;
+
+  debugger;
+
+  if(per <= 100 && per >= 80) {
+        Grades = 'A +'; 
+  } else if( per <= 79 && per >= 75) {
+    Grades = 'A'; 
+  } else if (per <= 74 && per >= 70) {
+    Grades = 'A- '; 
+
+  } else if(per <=69 && per >= 65) {
+         Grades = 'B+'; 
+  } else if (per <= 64 && per >= 60) {
+    Grades = 'B'; 
+  } else if (per <= 59 && per >= 55) {
+    Grades = 'B-'; 
+  } else if (per <= 54 && per >= 50 ) {
+    Grades = 'C+'; 
+  } else if (per <= 49 && per >= 45 ) {
+    Grades = 'C'; 
+  } else if (per <= 44 && per >= 40) {
+    Grades = 'D'; 
+  } else {
+    Grades = 'F';
+  }
+
+if(per >= 40) {
+  document.getElementById('values').innerHTML = ` Out of 800 your total is  ${totalGread} and percentage is ${per}%. <br> Your grade is ${ Grades}. You are Pass. `
+  } else {
+    document.getElementById('values').innerHTML = ` Out of 800 your total is  ${totalGread} and percentage is ${per}%. <br> Your grade is ${ Grades}. You are Fail. `
+
+  }
+}
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
